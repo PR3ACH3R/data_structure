@@ -72,3 +72,67 @@ function isPrime(n: number) {
   }
   return true;
 }
+
+Recursion
+---------
+ Recursion is a programming technique where a function calls itself in order to solve a problem. A recursive function typically has two main components: a base case that stops the recursion and a recursive case that continues the recursion.
+ 
+ function recursiveFibonacci(n: number) {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+}
+
+console.log(recursiveFibonacci(0));
+
+Search Algorithms
+-----------------
+* Linear Search
+  Linear search is a simple search algorithm that checks every element in a list sequentially until the desired element is found or the list ends.
+
+Problem: Given an array of n elements and a target element t, find the index of t in the array. Return -1 if the target element is not found.
+
+function linearSearch(arr: number[], traget: number) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === traget) {
+      return i;
+    }
+  }
+  return -1;
+}
+console.log(linearSearch([-5, 2, 10, 4, 6], 10));
+
+* Binary Search
+  Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing the search interval in half. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise, narrow it to the upper half. Repeat until the value is found or the interval is empty.
+
+NOTE: Bineary search can only be applied on sorted arrays.
+
+Steps:
+1. Find the middle element of the array.
+2. If the middle element is equal to the target element, return the index of the middle element.
+3. If the target element is less than the middle element, repeat the search on the left
+    half of the array.
+4. If the target element is greater than the middle element, repeat the search on the right
+    half of the array.
+
+example: arr = [1, 3, 5, 7, 9], target = 7
+
+function binarySearch(arr: number[], target: number) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+
+  return -1; // Target not found
+}
