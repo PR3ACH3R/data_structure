@@ -70,7 +70,12 @@ function recursiveBinarySearch(arr: number[], target: number) {
   return search(arr, target, 0, arr.length - 1);
 }
 
-function search(arr, target, leftIndex, rightIndex) {
+function search(
+  arr: number[],
+  target: number,
+  leftIndex: number,
+  rightIndex: number
+) {
   if (leftIndex > rightIndex) {
     return -1;
   }
