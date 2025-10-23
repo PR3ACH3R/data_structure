@@ -1,0 +1,50 @@
+What is an algorithm ?
+
+An algorithm is a set of well-defined instructions to solve a particluar problem.
+Learning algorithm translates to learning different techniques to solve problems efficiently.
+
+
+Time and Space Complexity
+-------------------------
+
+Time Complexity: It is the computational complexity that describes the amount of computer time it takes to run an algorithm.
+Space Complexity: It is the computational complexity that describes the amount of memory space it takes to run an algorithm.
+
+Big O Notation
+--------------
+
+The worst case complexity of an algorithm is repesented using Big O notation.
+
+
+Fibonacci Sequence
+------------------
+Problem : Give a number n, find the first n elements of the Fibonacci sequence.
+
+In mathematics, the Fibonacci sequence is a series of numbers where a number is the addition of the last two numbers, starting with 0, and 1.
+මෙම අනුක්‍රමයේ පළමු සංඛ්‍යා දෙක 0 සහ 1 (විකල්ප වශයෙන් 1 සහ 1) ය. එමෙන්ම, පසුව පැමිණෙන සංඛ්‍යාවක් පෙර සංඛ්‍යා දෙක එකතු කිරීමෙන් ලැබේ. එතැන්පටන් ලැබෙන අනුක්‍රමය මෙසේය 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
+
+function fibonacci(n: number) {
+  const fib = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib;
+}
+
+console.log(fibonacci(2)); // [0,1]
+console.log(fibonacci(3)); // [0,1,1]
+console.log(fibonacci(7)); // [0,1,1,2,3,5,8]
+
+Big-O = O(n)
+
+Factorial of a Number
+----------------------
+
+Problem : Given a number n, find the factorial of n.
+
+ක්‍රමාරෝපිත සංඛ්‍යාව﻿ (factorial number) යනු n! ලෙස නියම කරන ගණිත ක්‍රියාවක් වන අතර, එය 1 සිට n දක්වා ඇති සියලු ධන සංඛ්‍යා එකිනෙකට ගුණ කිරීමෙන් ලැබෙන මුළු එකතුවයි.
+
+තෝරාගත් ඕනෑම පූර්ණ සංඛ්‍යාවක් සඳහා:
+
+n! = n × (n − 1) × (n − 2) × ... × 3 × 2 × 1
+
